@@ -1,0 +1,7 @@
+module.exports = {
+  text: 'This is from wxs',
+  filter: function (num) {
+    return num && num.toFixed(2);
+  }
+};
+
