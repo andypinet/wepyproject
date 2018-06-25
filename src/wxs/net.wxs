@@ -1,0 +1,16 @@
+var utils = require("./utils.wxs");
+
+module.exports = {
+  // 创建query
+  // @example
+  // query('/pages/listDetail', [['id', item.id]])
+  query: function(url, params) {
+    var query = "";
+    if (params && params[0]) {
+      query = params.map(function (param) {
+        return encodeURIComponent(param[0]) + '=' + encodeURIComponent(param[1])
+      }).join("&");
+    }
+    return url + (query ? "?" + query : "");
+  }
+};

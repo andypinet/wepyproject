@@ -50,6 +50,11 @@
     </panel>
 
     <panel>
+      <view class="title" slot="title">原生组件</view>
+      <n-row>native row</n-row>
+    </panel>
+
+    <panel>
       <view class="title" slot="title">其它测试</view>
       <button @tap="showToast" size="mini">第三方组件</button>
       <button @tap="communicate" size="mini">组件通信</button>
@@ -89,6 +94,11 @@
       <list></list>
     </panel>
 
+    <t-panel>
+      <view class="title" slot="title">测试带前缀的标签</view>
+      <view>这个标签是t-panel</view>
+    </t-panel>
+
     <toast />
   </view>
 </template>
@@ -102,12 +112,12 @@
   import Group from '@/components/group'
   // import List from "../components/list";
   import List from '@alise/components/list' // aliasFields example
-  // import Navi2 from "../components/navi"
-  import Navi from "wepybuild"
+  import Navi from "wepyk-navi"
   import Toast from 'wepy-com-toast'
 
   import moduleA from 'module-a' // aliasFields ignore module example
   import testMixin from '../mixins/test'
+  // native components
 
 
   console.log('moduleA ignored: ', moduleA); // => moduleA ignored: {}
@@ -117,10 +127,14 @@
 
   export default class Index extends wepy.page {
     config = {
-      navigationBarTitleText: 'test'
+      navigationBarTitleText: 'test',
+      usingComponents: {
+        'n-row': '../native/components/row/index'
+      }
     };
     components = {
       panel: Panel,
+      ['t-panel']: Panel,
       counter1: Counter,
       counter2: Counter,
       navi2: Navi,

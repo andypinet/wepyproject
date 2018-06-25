@@ -1,0 +1,10 @@
+module.exports = {
+  objectFromEntries: function(entries) {
+    var ret = {};
+    entries.forEach(function (v) {
+      ret[v[0]] = v[1];
+    });
+
+    return ret;
+  }
+};

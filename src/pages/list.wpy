@@ -1,13 +1,57 @@
 <style lang="scss">
+  .a-card {
+    box-shadow: 0 3px 10px 1px rgba(0,0,0,0.15)
+  }
+
+  .list-item-card {
+    width: 650rpx;
+    height: 240rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    &:nth-child(n+1) {
+      margin-bottom: 30rpx;
+    }
+  }
 </style>
 <template>
   <view class="container">
-    <view>list</view>
+    <repeat for="{{items}}"
+            index="index"
+            item="item"
+            key="key">
+      <view class="a-card list-item-card">
+        <navi :url="m1.query('/pages/listDetail', [['id', item.id]])">
+          item {{item.id}}
+        </navi>
+      </view>
+    </repeat>
   </view>
 </template>
 <script>
   import wepy from 'wepy'
-  export default class Index extends wepy.page {
+  import Navi from 'wepyk-navi'
 
+  // import wxs
+  import mywxs from '../wxs/net.wxs';
+
+  export default class List extends wepy.page {
+    components = {
+      navi: Navi
+    };
+
+    data = {
+      items: [
+        {
+          id: 1
+        },
+        {
+          id: 2
+        }
+      ]
+    };
+
+    wxs = {
+      m1: mywxs
+    };
   }
 </script>

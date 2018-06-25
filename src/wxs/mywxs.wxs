@@ -2,6 +2,9 @@ module.exports = {
   text: 'This is from wxs',
   filter: function (num) {
     return num && num.toFixed(2);
+  },
+  detail: function(url, id) {
+    return url + "?id=" + id;
   }
 };
 

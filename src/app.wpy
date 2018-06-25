@@ -1,6 +1,6 @@
 <style lang="scss">
+@import "../node_modules/wepyk-weui-style/sass/weui";
 @import "../node_modules/wepyk-style/app";
-
 
 .container {
   height: 100%;
@@ -13,16 +13,19 @@
 </style>
 
 <script>
+// js lib polyfill
+import 'andy-aui/lib/xcx/polyfill'
+
 import wepy from 'wepy'
 import 'wepy-async-function'
 import interceptRequest from "./intercepts/request";
-import "@/common/lib/index";
 
 export default class extends wepy.app {
   config = {
     pages: [
       'pages/index',
-      'pages/list'
+      'pages/list',
+      'pages/listDetail'
     ],
     window: {
       backgroundTextStyle: 'light',

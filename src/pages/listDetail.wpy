@@ -1,0 +1,16 @@
+<style lang="scss">
+</style>
+<template>
+  <view class="container">
+    <view>detail content</view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class ListDetail extends wepy.page {
+      onLoad(options) {
+        console.log(this, options);
+      }
+  }
+</script>
