@@ -1,4 +1,7 @@
 <style lang="scss">
+@import "../node_modules/wepyk-style/app";
+
+
 .container {
   height: 100%;
   display: flex;
@@ -18,7 +21,8 @@ import "@/common/lib/index";
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index'
+      'pages/index',
+      'pages/list'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -57,17 +61,20 @@ export default class extends wepy.app {
     console.log(data)
   }
 
-  getUserInfo(cb) {
+  setUserDetail(res) {
+    this.globalData.userInfo = res.userInfo;
+    wx.setStorageSync('__userDetail', res);
+  }
+
+  getUserDetail(cb) {
     const that = this;
-    if (this.globalData.userInfo) {
-      return this.globalData.userInfo
+    let storUserInfo = wx.getStorageSync('__userDetail');
+    if (storUserInfo) {
+      that.globalData.userInfo = storUserInfo;
     }
-    wepy.getUserInfo({
-      success (res) {
-        that.globalData.userInfo = res.userInfo;
-        cb && cb(res.userInfo)
-      }
-    })
+    if (that.globalData.userInfo) {
+      cb && cb(that.globalData.userInfo)
+    }
   }
 }
 </script>

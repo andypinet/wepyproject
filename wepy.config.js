@@ -41,6 +41,12 @@ module.exports = {
     }
   },
   plugins: {
+    'autoprefixer': {
+      filter: /\.(wxss|css)$/,
+      config: {
+        browsers: ['last 11 iOS versions']
+      }
+    },
     // 插件示例
     // 'replace': {
     //   filter: /app.js$/,

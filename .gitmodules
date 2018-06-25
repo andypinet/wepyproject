@@ -1,4 +1,1 @@
-[submodule "src/common"]
-	path = src/common
-	url = git@github.com:andypinet/wepycommon.git
-	branch = v0.1.1
+
