@@ -7,10 +7,8 @@
 </template>
 <script>
   import wepy from 'wepy'
+  import commonpage from "../frame/page";
 
-  export default class ListDetail extends wepy.page {
-      onLoad(options) {
-        console.log(this, options);
-      }
+  export default class ListDetail extends commonpage {
   }
 </script>

@@ -1,8 +1,8 @@
 <style lang="scss">
-  .mylist:odd {
+  .mylist:nth-child(odd) {
     color: red;
   }
-  .mylist:even {
+  .mylist:nth-child(even) {
     color: green;
   }
 </style>
@@ -29,14 +29,14 @@
           title: 'loading'
         }
       ]
-    }
+    };
 
     events = {
       'index-broadcast': (...args) => {
-        let $event = args[args.length - 1]
+        let $event = args[args.length - 1];
         console.log(`${this.$name} receive ${$event.name} from ${$event.source.name}`)
       }
-    }
+    };
 
     methods = {
       tap () {
@@ -44,10 +44,10 @@
         console.log(this.$name + ' tap')
       },
       add () {
-        let len = this.list.length
+        let len = this.list.length;
         this.list.push({id: len + 1, title: 'title_' + len})
       }
-    }
+    };
 
     onLoad () {
     }

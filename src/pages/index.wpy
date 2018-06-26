@@ -105,6 +105,7 @@
 
 <script>
   import wepy from 'wepy'
+  import commonpage from "../frame/page";
 
   // components
   import Panel from '@/components/panel' // alias example
@@ -125,7 +126,7 @@
   // import wxs
   import mywxs from '../wxs/mywxs.wxs';
 
-  export default class Index extends wepy.page {
+  export default class Index extends commonpage {
     config = {
       navigationBarTitleText: 'test',
       usingComponents: {
@@ -286,8 +287,9 @@
       }
     }
 
-    onLoad() {
+    onMount() {
       let self = this;
+      console.log('onMount');
       self.$parent.getUserDetail(function (userDetail) {
         self.initUserDetail(userDetail);
       });

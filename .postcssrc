@@ -1,7 +1,6 @@
 {
     "plugins": {
-        "autoprefixer": {
-          browsers: ["ios > 7"]
+        "postcss-transform-shortcut": {
         },
         "postcss-short": {
           position: {
@@ -13,6 +12,9 @@
           border: {
             skip: "_"
           }
+        },
+        "autoprefixer": {
+          browsers: ["ios > 7"]
         }
     }
 }
