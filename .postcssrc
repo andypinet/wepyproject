@@ -1,0 +1,18 @@
+{
+    "plugins": {
+        "autoprefixer": {
+          browsers: ["ios > 7"]
+        },
+        "postcss-short": {
+          position: {
+            skip: "_"
+          },
+          spacing: {
+            skip: "_"
+          },
+          border: {
+            skip: "_"
+          }
+        }
+    }
+}

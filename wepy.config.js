@@ -21,12 +21,12 @@ module.exports = {
     modules: ['node_modules']
   },
   compilers: {
-    // less: {
-    //   compress: prod
-    // },
     sass: {
       outputStyle: 'compressed'
     },
+    // postcss: {
+    //   plugins: postcssplugins
+    // },
     babel: {
       sourceMap: true,
       presets: [
@@ -41,12 +41,7 @@ module.exports = {
     }
   },
   plugins: {
-    'autoprefixer': {
-      filter: /\.(wxss|css)$/,
-      config: {
-        browsers: ['last 11 iOS versions']
-      }
-    },
+    'rw-postcss': {},
     // 插件示例
     // 'replace': {
     //   filter: /app.js$/,

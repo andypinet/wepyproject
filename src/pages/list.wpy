@@ -1,4 +1,6 @@
 <style lang="scss">
+  @import "../../node_modules/andy-aui-css/ui/xcx";
+
   .a-card {
     box-shadow: 0 3px 10px 1px rgba(0,0,0,0.15)
   }
@@ -8,7 +10,10 @@
     height: 240rpx;
     padding: 20rpx;
     box-sizing: border-box;
-    &:nth-child(n+1) {
+    @include nth-index(1) {
+      margin-top: 30rpx;
+    }
+    @include nth-not-last() {
       margin-bottom: 30rpx;
     }
   }
