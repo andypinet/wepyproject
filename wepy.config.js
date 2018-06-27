@@ -52,6 +52,9 @@ module.exports = {
     //     }
     //   }
     // }
+    // 自定义插件示例
+    // 'auidef': {
+    // }
   },
   appConfig: {
     noPromiseAPI: ['createSelectorQuery']
