@@ -15,6 +15,7 @@
 <script>
 // js lib polyfill
 import 'andy-aui/lib/xcx/polyfill'
+import 'andy-aui/lib/global'
 
 import wepy from 'wepy'
 import 'wepy-async-function'
