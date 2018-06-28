@@ -34,13 +34,13 @@
 </template>
 <script>
   import wepy from 'wepy'
-  import commonpage from "../frame/page";
+  import frame from "../frame/index";
   import Navi from 'wepyk-navi'
 
   // import wxs
   import mywxs from '../wxs/net.wxs';
 
-  export default class List extends commonpage {
+  export default class List extends frame.page  {
     components = {
       navi: Navi
     };

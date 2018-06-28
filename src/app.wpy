@@ -13,6 +13,10 @@
 </style>
 
 <script>
+'use INI'
+
+console.log(INI);
+
 // js lib polyfill
 import 'andy-aui/lib/xcx/polyfill'
 import 'andy-aui/lib/global'
@@ -20,6 +24,10 @@ import 'andy-aui/lib/global'
 import wepy from 'wepy'
 import 'wepy-async-function'
 import interceptRequest from "./intercepts/request";
+
+import {initCenterConfig} from 'wepyk-api/lib/center';
+
+initCenterConfig({INI});
 
 export default class extends wepy.app {
   config = {

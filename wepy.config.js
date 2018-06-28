@@ -1,6 +1,8 @@
 const path = require('path');
 var prod = process.env.NODE_ENV === 'production';
 
+let curcompilefolder = "src";
+
 module.exports = {
   wpyExt: '.wpy',
   eslint: false,
@@ -14,8 +16,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      counter: path.join(__dirname, 'src/components/counter'),
-      '@': path.join(__dirname, 'src')
+      counter: path.join(__dirname, `${curcompilefolder}/components/counter`),
+      '@': path.join(__dirname, `${curcompilefolder}`)
     },
     aliasFields: ['wepy', 'weapp'],
     modules: ['node_modules']
@@ -43,17 +45,21 @@ module.exports = {
   plugins: {
     'rw-postcss': {},
     // 插件示例
-    // 'replace': {
-    //   filter: /app.js$/,
-    //   config: {
-    //     find: /@TEST/g,
-    //     replace: function (matchs, word) {
-    //       return ' hello test ';
-    //     }
-    //   }
-    // }
+    'replace': {
+      filter: /app.js$/,
+      config: {
+        find: /'\s*use\s+(\w+)\s*'/g,
+        replace: function (matchs, word) {
+          if (word === "INI") {
+            return `const {INI} = require('./ini.js')`;
+          }
+          return '';
+        }
+      }
+    }
     // 自定义插件示例
     // 'auidef': {
+    //   filter: new RegExp('app\.(js)$')
     // }
   },
   appConfig: {

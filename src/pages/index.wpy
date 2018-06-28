@@ -105,7 +105,7 @@
 
 <script>
   import wepy from 'wepy'
-  import commonpage from "../frame/page";
+  import frame from "../frame/index";
 
   // components
   import Panel from '@/components/panel' // alias example
@@ -126,7 +126,7 @@
   // import wxs
   import mywxs from '../wxs/mywxs.wxs';
 
-  export default class Index extends commonpage {
+  export default class Index extends frame.page {
     config = {
       navigationBarTitleText: 'test',
       usingComponents: {
