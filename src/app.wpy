@@ -15,8 +15,6 @@
 <script>
 'use INI'
 
-console.log(INI);
-
 // js lib polyfill
 import 'andy-aui/lib/xcx/polyfill'
 import 'andy-aui/lib/global'
@@ -29,6 +27,9 @@ import {initCenterConfig} from 'wepyk-api/lib/center';
 
 initCenterConfig({INI});
 
+/**
+ * APP
+ */
 export default class extends wepy.app {
   config = {
     pages: [
@@ -59,6 +60,7 @@ export default class extends wepy.app {
   async onLaunch() {
     this.testAsync()
   }
+
 
   sleep (s) {
     return new Promise((resolve, reject) => {

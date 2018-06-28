@@ -56,7 +56,7 @@ module.exports = {
           return '';
         }
       }
-    }
+    },
     // 自定义插件示例
     // 'auidef': {
     //   filter: new RegExp('app\.(js)$')
