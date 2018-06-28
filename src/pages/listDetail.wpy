@@ -7,8 +7,8 @@
 </template>
 <script>
   import wepy from 'wepy'
-  import commonpage from "../frame/page";
+  import frame from "../frame/index";
 
-  export default class ListDetail extends commonpage {
+  export default class ListDetail extends frame.page {
   }
 </script>
