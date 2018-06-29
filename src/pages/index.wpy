@@ -1,4 +1,6 @@
 <style lang="scss">
+  @import "../../node_modules/wepyk-style/dev/index";
+
   .userinfo {
     display: flex;
     flex-direction: column;
@@ -29,6 +31,9 @@
       <view class="title" slot="title">导航</view>
       <navi2 url="/pages/list">
         <text>list</text>
+      </navi2>
+      <navi2 url="/pages/form">
+        <text>form</text>
       </navi2>
     </panel>
 
@@ -114,6 +119,7 @@
   // import List from "../components/list";
   import List from '@alise/components/list' // aliasFields example
   import Navi from "wepyk-navi"
+
   import Toast from 'wepy-com-toast'
 
   import moduleA from 'module-a' // aliasFields ignore module example

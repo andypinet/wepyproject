@@ -26,7 +26,8 @@
     "wepy-com-toast": "^1.0.2",
     "wepyk-api": "^0.1.50",
     "wepyk-navi": "^0.1.15",
-    "wepyk-style": "^0.1.7",
+    "wepyk-search-group": "^0.1.6",
+    "wepyk-style": "^0.1.16",
     "wepyk-weui-style": "^0.1.15"
   },
   "devDependencies": {
