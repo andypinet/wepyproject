@@ -25,6 +25,21 @@
       >open popup</button>
     </panel>
 
+    <panel>
+      <view slot="title">moveable</view>
+      <view class="section__title">movable-view区域小于movable-area</view>
+      <movable-area style="height: 200px; width: 200px; background: red;"
+      >
+        <movable-view style="height: 50px; width: 50px; background: blue;"
+                      x="{{movable.x}}" y="{{movable.y}}" direction="all"
+                      @change="onMoveableChange"
+                      @touchend="onMoveableEnd"
+                      @touchcancel="onMoveableCancel"
+        >
+        </movable-view>
+      </movable-area>
+    </panel>
+
     <a-popup
       class="a-popup"
       visibility="hidden"
@@ -42,15 +57,18 @@
   import Popup from "wepyk-popup"
   import Panel from '@/components/panel'
 
+  import {moveAblemixin} from "../mixins/com";
+
   export default class Com extends frame.page {
+    mixins = [
+      moveAblemixin
+    ];
+
     components = {
       ['a-search-group']: SearchGroup,
       ['a-popup']: Popup,
       ['panel']: Panel
     };
-
-    onMount() {
-    }
 
     methods = {
       openDemopopup() {
