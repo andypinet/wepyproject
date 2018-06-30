@@ -36,7 +36,7 @@ export default class extends wepy.app {
       'pages/index',
       'pages/list',
       'pages/listDetail',
-      'pages/form',
+      'pages/com',
       'pages/web'
     ],
     window: {

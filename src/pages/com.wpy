@@ -1,0 +1,53 @@
+<style lang="scss">
+  .a-popup {
+    .popup-cont {
+      width: 550rpx;
+    }
+  }
+</style>
+<template>
+  <view class="container">
+    <a-search-group></a-search-group>
+
+    <panel>
+      <view slot="title">popup title</view>
+      <button
+        size="mini"
+        @tap="openDemopopup"
+      >open popup</button>
+    </panel>
+
+    <a-popup
+      class="a-popup"
+      visibility="hidden"
+      type="center"
+    >
+      popup content
+    </a-popup>
+
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import frame from "../frame/index";
+  import SearchGroup from "wepyk-search-group"
+  import Popup from "wepyk-popup"
+  import Panel from '@/components/panel' // alias example
+
+  export default class Com extends frame.page {
+    components = {
+      ['a-search-group']: SearchGroup,
+      ['a-popup']: Popup,
+      ['panel']: Panel
+    };
+
+    onMount() {
+    }
+
+    methods = {
+      openDemopopup() {
+        this.$invoke('a-popup', 'open');
+      }
+    }
+  }
+</script>

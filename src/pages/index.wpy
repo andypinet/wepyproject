@@ -32,8 +32,8 @@
       <navi2 url="/pages/list">
         <text>list</text>
       </navi2>
-      <navi2 url="/pages/form">
-        <text>form</text>
+      <navi2 url="/pages/com">
+        <text>com</text>
       </navi2>
     </panel>
 
@@ -229,6 +229,10 @@
 
         promise.then((d) => {
           console.log('toast done')
+        });
+
+        promise.finally((d) => {
+          console.log('toast finally')
         })
       },
       mixtap () {
