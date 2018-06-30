@@ -12,6 +12,9 @@
     <panel>
       <view slot="title">popup title</view>
       <button
+        class="weui-btn"
+        type="primary"
+        plain="true"
         size="mini"
         @tap="openDemopopup"
       >open popup</button>
@@ -22,7 +25,7 @@
       visibility="hidden"
       type="center"
     >
-      popup content
+      <view slot="content">popup content</view>
     </a-popup>
 
   </view>
