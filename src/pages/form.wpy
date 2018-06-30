@@ -1,0 +1,18 @@
+<style lang="scss">
+</style>
+<template>
+  <view class="container">
+    <a-search-group></a-search-group>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import frame from "../frame/index";
+  import SearchGroup from "wepyk-search-group"
+
+  export default class Form extends frame.page {
+    components = {
+      ['a-search-group']: SearchGroup
+    }
+  }
+</script>
