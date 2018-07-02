@@ -60,6 +60,7 @@
   import {moveAblemixin} from "../mixins/com";
 
   export default class Com extends frame.page {
+
     mixins = [
       moveAblemixin
     ];

@@ -1,5 +1,8 @@
 import wepy from "wepy";
 
+/**
+ * common page
+ */
 export default class extends wepy.page {
   /**
    * onload webview options
@@ -7,6 +10,12 @@ export default class extends wepy.page {
    * @type {{}}
    */
   Mopt = {};
+
+  /**
+   * call this onMount  apply Mopt...
+   *
+   * @param options
+   */
   onLoad(options) {
     this.Mopt = options;
     if (this.onMount) {
