@@ -28,7 +28,7 @@
     "wepyk-navi": "^0.1.15",
     "wepyk-popup": "^0.1.90",
     "wepyk-search-group": "^0.1.6",
-    "wepyk-style": "^0.1.16",
+    "wepyk-style": "^0.1.36",
     "wepyk-weui-style": "^0.1.15"
   },
   "devDependencies": {

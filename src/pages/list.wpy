@@ -1,22 +1,6 @@
 <style lang="scss">
   @import "../../node_modules/andy-aui-css/ui/xcx";
 
-  .a-card {
-    box-shadow: 0 3px 10px 1px rgba(0,0,0,0.15)
-  }
-
-  .list-item-card {
-    width: 650rpx;
-    height: 240rpx;
-    padding: 20rpx;
-    box-sizing: border-box;
-    @include nth-index(1) {
-      margin-top: 30rpx;
-    }
-    @include nth-not-last() {
-      margin-bottom: 30rpx;
-    }
-  }
 </style>
 <template>
   <view class="container">
@@ -24,11 +8,12 @@
             index="index"
             item="item"
             key="key">
-      <view class="a-card list-item-card">
-        <navi :url="m1.query('/pages/listDetail', [['id', item.id]])">
-          item {{item.id}}
-        </navi>
-      </view>
+      <group :grouplist="item" :indexa="index"></group>
+      <!--<view class="a-card list-item-card">-->
+        <!--<navi :url="m1.query('/pages/listDetail', [['id', item.id]])">-->
+          <!--item {{item.id}}-->
+        <!--</navi>-->
+      <!--</view>-->
     </repeat>
   </view>
 </template>
@@ -36,22 +21,50 @@
   import wepy from 'wepy'
   import frame from "../frame/index";
   import Navi from 'wepyk-navi'
+  import Group from '@/components/groupcard'
 
   // import wxs
   import mywxs from '../wxs/net.wxs';
 
   export default class List extends frame.page  {
     components = {
-      navi: Navi
+      navi: Navi,
+      group: Group
     };
 
     data = {
       items: [
         {
-          id: 1
+          id: 1,
+          name: '点击改变',
+          list: [
+            {
+              childid: '1.1',
+              childname: '子项'
+            }, {
+              childid: '1.2',
+              childname: '子项'
+            }, {
+              childid: '1.3',
+              childname: '子项'
+            }
+          ]
         },
         {
-          id: 2
+          id: 2,
+          name: '点击改变',
+          list: [
+            {
+              childid: '2.1',
+              childname: '子项'
+            }, {
+              childid: '2.2',
+              childname: '子项'
+            }, {
+              childid: '2.3',
+              childname: '子项'
+            }
+          ]
         }
       ]
     };

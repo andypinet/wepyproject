@@ -1,0 +1,43 @@
+<style type="scss">
+  @import "../../node_modules/andy-aui-css/ui/dev/index";
+  @import "../../node_modules/wepyk-style/index";
+
+  .groupcard {
+    width: 560rpx;
+    @include list-gutter(30rpx);
+    padding: 30rpx;
+    @extend %a-shadow--default;
+  }
+</style>
+<template>
+  <view class="groupcard">
+    <text class="id">{{grouplist.id}}. </text>
+    <text class="name" @tap="changeGroupName">{{grouplist.name}}</text>
+    <view>
+      <repeat for="{{grouplist.list}}" item="item">
+        <groupitem :gitem="item"></groupitem>
+      </repeat>
+    </view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import GroupItem from './group-card-item'
+
+  export default class Groupcard extends wepy.component {
+    props = {
+      grouplist: {},
+      index: {}
+    };
+
+    components = {
+      groupitem: GroupItem
+    };
+    methods = {
+      changeGroupName () {
+        this.grouplist.name = `Parent Random(${Math.random()})`;
+        console.log(`Clicked Group ${this.$index}, ID is ${this.grouplist.id}`)
+      }
+    }
+  }
+</script>

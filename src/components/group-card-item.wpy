@@ -1,0 +1,30 @@
+<style type="scss">
+  @import "../../node_modules/andy-aui-css/ui/dev/index";
+  @import "../../node_modules/wepyk-style/index";
+
+.group-card-item {
+
+}
+</style>
+<template>
+  <view class="group-card-item">
+    <text class="id">{{gitem.childid}}.</text>
+    <text class="name" @tap="tap"> {{gitem.childname}}</text>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class GroupCardItem extends wepy.component {
+    props = {
+      gitem: {}
+    };
+    data = {
+    };
+    methods = {
+      tap () {
+        console.log(`Clicked Group ${this.$parent.$index}. Item ${this.$index}, ID is ${this.gitem.childid}`)
+      }
+    }
+  }
+</script>

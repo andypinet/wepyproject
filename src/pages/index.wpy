@@ -29,9 +29,9 @@
 
     <panel>
       <view class="title" slot="title">导航</view>
-      <navi2 url="/pages/list">
+      <navi1 url="/pages/list">
         <text>list</text>
-      </navi2>
+      </navi1>
       <navi2 url="/pages/com">
         <text>com</text>
       </navi2>
@@ -144,6 +144,7 @@
       ['t-panel']: Panel,
       counter1: Counter,
       counter2: Counter,
+      navi1: Navi,
       navi2: Navi,
       list: List,
       group: Group,
