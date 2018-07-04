@@ -31,13 +31,14 @@
     };
 
     components = {
-      groupitem: GroupItem
+      groupitem: GroupItem,
     };
+
     methods = {
       changeGroupName () {
         this.grouplist.name = `Parent Random(${Math.random()})`;
         console.log(`Clicked Group ${this.$index}, ID is ${this.grouplist.id}`)
       }
-    }
+    };
   }
 </script>

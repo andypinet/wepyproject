@@ -10,14 +10,29 @@
   <view class="group-card-item">
     <text class="id">{{gitem.childid}}.</text>
     <text class="name" @tap="tap"> {{gitem.childname}}</text>
+    <view>
+      <navi
+        :url="m1.query('/pages/listDetail', [['id', 1]])"
+      >
+        item {{gitem.id}}
+      </navi>
+    </view>
   </view>
 </template>
 <script>
   import wepy from 'wepy'
+  import Navi from 'wepyk-navi'
+  import mywxs from '../wxs/net.wxs'
 
   export default class GroupCardItem extends wepy.component {
     props = {
       gitem: {}
+    };
+    components = {
+      navi: Navi
+    };
+    wxs = {
+      m1: mywxs
     };
     data = {
     };

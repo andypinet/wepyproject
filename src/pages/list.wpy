@@ -9,18 +9,12 @@
             item="item"
             key="key">
       <group :grouplist="item" :indexa="index"></group>
-      <!--<view class="a-card list-item-card">-->
-        <!--<navi :url="m1.query('/pages/listDetail', [['id', item.id]])">-->
-          <!--item {{item.id}}-->
-        <!--</navi>-->
-      <!--</view>-->
     </repeat>
   </view>
 </template>
 <script>
   import wepy from 'wepy'
   import frame from "../frame/index";
-  import Navi from 'wepyk-navi'
   import Group from '@/components/groupcard'
 
   // import wxs
@@ -28,7 +22,6 @@
 
   export default class List extends frame.page  {
     components = {
-      navi: Navi,
       group: Group
     };
 
